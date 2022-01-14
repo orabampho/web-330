@@ -33,16 +33,16 @@ How to Toggle - https://www.w3schools.com/howto/howto_js_toggle_like.asp
     <title>WEB 330 - Enterprise JavaScript II</title>
   </head>
   <body class="light-theme">
+    <div id="container">
     <i
       onclick="toggleMode(this)"
       id="icon-mode"
       class="fa fa-toggle-off pull-right"
       style="font-size: 18px"
     >
-      <span id="icon-text"></span>
+      <span id="icon-text">Light Mode</span>
     </i>
 
-    <div id="container">
       <h1>Orawan Rabampho's Landing Page</h1>
       <h2>WEB 330 Enterprise JavaScript II</h2>
 
@@ -105,6 +105,10 @@ How to Toggle - https://www.w3schools.com/howto/howto_js_toggle_like.asp
     </div>
 
     <script>
+
+      //call for the setDefaultTheme function in theme.js
+      setDefaultTheme();
+      
       function toggleMode(x) {
         let colorTheme = document.body.classList; // get the body's CSS class
         let iconMode = x.classList; // assign classes to the triggered button

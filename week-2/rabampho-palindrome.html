@@ -1,0 +1,118 @@
+<!--
+===================================================    
+Title:  Assignment 2.2 - Palindrome App
+Author: Professor Krasso
+Date:  14 January 2022
+Modified By: Orawan Rabampho
+Description: JavaScript strings and functions to create a Palindrome application.
+Source:  
+Reverse a string - https://www.freecodecamp.org/news/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb/
+Check Palindrome using built-in functions - https://www.programiz.com/javascript/examples/palindrome
+https://sebhastian.com/palindrome-javascript/
+Create String - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Strings
+Lower Case - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+====================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../theme.css" />
+    <link rel="stylesheet" type="text/css" href="../site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="../theme.js"></script>
+    
+    <title>WEB 330 - Enterprise JavaScript II</title>
+</head>
+<body class="light-theme"> 
+    <div id="container">
+        <div class ="assign-container">
+            <h1 class="app-header">Welcome to the Palindrome App!</h1>
+            <div class="assign-content">
+                <div class="card">
+                    <div class="card-title">Palindrome Checker</div>
+                    <div class="card-content">
+                        <div class="form">
+                            <div class="form-field">
+                                <label for="txtPharse">Phrase value</label>
+                                <input type="type" id="txtPhrase" name="txtPhrase" class="input"/>
+                            </div><!--form-field-->
+                            <div class="form-field">
+                                <button type="submit" class="btn btn-primary full-width" id="btnCheckPhrase" onclick="function checkPhrase()">Check Phrase</button>
+                            </div><!--close form-field-->
+                        </div><!--form-->
+                    </div><!--card-content-->
+                </div><!--card-->
+                <br />
+                    <a href="../index.html" class="return-home">Return</a>
+            </div><!--assign-content-->
+        </div><!--assign-container-->
+        <div class="assign-container">
+            <div class="assign-content">
+                <div class="card">
+                    <div class="card-title">Palindrome Results</div>
+                    <div class="card-content assign-results-test" id="assign-results-header"></div>
+                    <div class="card-content assign-results-text" id="assign-results"></div>
+                </div><!--assign-container-->
+            </div><!--assign-content-->
+        </div><!--card-->
+    </div><!--container-->
+<script>
+//get current date
+function getTodayDate(){
+return new Date().toLocaleDateString("en-US");
+}
+//get length of the input string
+function getLength(str){
+    return str.length;
+}
+//reverse a string with built-in functions
+function reverse(str){
+    //use the split() method to return a new array
+    const splitString = str.split("");
+    //use the reverse() method to reverse the new created array
+    const reverseArray = splitString.reverse();
+     //use the join() method to join all elements of the array into a string
+    const joinArray = reverseArray.join("");
+    //return the reversed string
+    return joinArray;
+}
+//check whether a passed string is palindrome or not
+function isPalindrome(str){
+    const reverseString = reverse(str);
+    if (reverseString == str){
+        return true;
+    } 
+    else {
+        return false;
+    }
+}
+//start the btnCheckPhrase function
+document.getElementById("btnCheckPhrase").onclick = function(){
+    const txtPhrase = document.getElementById("txtPhrase").value;//define str value from HTML input
+    const assignResults = document.getElementById("assign-results");//bind assignResults to ID "assign-results"
+    const assignResultsHeader = document.getElementById("assign-results-header"); //bind assignResultsHeader to ID "assign-results-header" 
+    const today = getTodayDate(); //define today
+    const len = getLength(txtPhrase); //define len
+    const reversePhrase = reverse(txtPhrase); //set reversePhrase to reverse(txtPhrase) value
+    //create str to display output to div "assign-results-header"
+    const header = `Date: ${today} </br>
+                    Original Phrase: ${txtPhrase.toLowerCase()} </br>
+                    Reversed Phrase: ${reversePhrase.toLowerCase()} </br>
+                    Phrase Length: ${len}`
+    console.log(header);
+    //display header to div "assign-results-header"
+    assignResultsHeader.innerHTML = header;
+    //if..else statement to passing-in txtPhrase
+    const palindromeResults = isPalindrome(txtPhrase);
+    if (palindromeResults === true){
+        assignResults.innerHTML = txtPhrase.toLowerCase() + " <u><b>is</b></u> a palindrome!";
+    }
+    else {assignResults.innerHTML = txtPhrase.toLowerCase() + " <u><b>is not</b></u> a palindrome!";
+    }
+};
+</script>
+</body>
+</html>

@@ -11,7 +11,7 @@ Static data - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/
 */
 
 #foodList {
-    float: left;
+    float: right;
     color: #df546a;
     font-size: 12px;
     letter-spacing: 2px;

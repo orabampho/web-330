@@ -1,0 +1,114 @@
+<!--
+===================================================    
+Title:  Assignment 4.2 - Calorie App
+Author: Professor Krasso
+Date:  30 January 2022
+Modified By: Orawan Rabampho
+Description: Create calorie convert app.
+Source:
+Static data - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_static_initialization_blocks
+====================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../theme.css" />
+    <link rel="stylesheet" type="text/css" href="../site.css" />
+    <link rel="stylesheet" type="text/css" href="rabampho-calorie.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="../theme.js"></script>
+    
+    <title>WEB 330 - Enterprise JavaScript II</title>
+</head>
+<body class="light-theme"> 
+    <div id="container">
+        <div class ="assign-container">
+            <h1 class="app-header">Welcome to the Calorie App!</h1>
+            <div class="assign-content">
+                <div class="card">
+                    <div class="card-title">Calorie Search Form</div>
+                        <div class="form">
+                            <div class="form-field">
+                                <label for="txtFoodItem">Enter a food item</label>
+                                <input type="type" id="txtFoodItem" name="txtFoodItem" class="input"/>
+                                <span id="foodList"><span>
+                                
+                            </div><!--form-field-->
+
+                            <div class="form-field">
+                                <button type="submit" class="btn btn-primary full-width" id="btnSearch" >Search</button>
+                            </div><!--close form-field-->
+                        </div><!--form-->
+                    </div><!--card-->
+                <br />
+                    <a href="../index.html" class="return-home">Return</a>
+            </div><!--assign-content-->
+        </div><!--assign-container-->
+        </div>
+        <div class="assign-container">
+            <div class="assign-content">
+                <div class="card">
+                    <div class="card-title">Search Results</div>
+                    <div class="card-content" id="searchResults"></div>
+                </div><!--assign-container-->
+            </div><!--assign-content-->
+        </div><!--card-->
+
+<script type="module">
+
+setSelectedTheme();  
+
+  //Create an import statement for Calorie Converter.
+  import {CalorieConverter} from "./calorie-converter.js";
+
+  //define txtFoodItemEl value
+  let txtFoodItemEl = document.getElementById("txtFoodItem");
+
+  //crate a onclick to start search
+  document.getElementById("btnSearch").onclick = function() {
+    let txtFoodItem = (document.getElementById("txtFoodItem").value).toLowerCase();
+    console.log(txtFoodItem);
+    let foods = CalorieConverter.find(txtFoodItem);
+    console.log(foods);
+
+    //create table to populate foodItems
+    let tableData = `
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Calories</th>
+        </tr>`;
+    for (let food of foods) {
+        tableData += `
+        <tr>
+            <td>${food.name}</td>
+            <td>${food.calories}</td>
+        </tr>
+    `;    
+    }
+    
+    //bind the result to the searchResults div
+    document.getElementById("searchResults").innerHTML = tableData + `</table>`;
+};
+
+//Keyup Event
+window.addEventListener("keyup", (event) => {
+    if (event.keyCode === 13) {
+        document.getElementById("btnSearch").click();
+    }
+});
+
+const foodList = CalorieConverter.data;
+
+//create the foodListData string
+let foodListData = `<i>(Ex: `;
+    for (let name of foodList){
+        foodListData += name.name + ", ";
+    }
+    document.getElementById("foodList").innerHTML = foodListData.slice(0, -2) + ")</i>"; 
+</script>
+</body>
+</html>

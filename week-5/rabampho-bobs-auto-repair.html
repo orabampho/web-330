@@ -57,28 +57,18 @@ JavaScript Iterator - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Gu
                 <div><!--9. index.html container-->
                 <a href="../index.html" class="return-home">Return</a>
                 </div><!--9. index.html container-->
-                <br />
-                <div class="card"><!--10. card-->
-                    <div class="card-title">Shopping Cart</div>
-                    <div class="card-content" id="assign-results-header"><!--11. card-content-->
-                        <!--table placeholder-->
-                        <div class="table" id="shopping-cart"><!--12. table-->
-                            <table>
-                                <thead>
-                                   <tr>
-                                      <th>ID</th>
-                                      <th>Name</th>
-                                      <th>Price</th>
-                                   </tr>
-                                </thead>
-                                <tbody></tbody>
-                             </table> 
-                        </div><!--12. table-->                   
-                    </div><!--11. card-content-->
-                </div><!--10. card-->                  
             </div><!--3. assign-content-->
         </div><!--2. assign-container-->
-    </div><!--1. container-->    
+    </div><!--1. container-->
+    <div class="assign-container"><!--10. assign-container-->
+        <div class="assign-content"><!--11. assign-content-->
+            <div class="card"><!--12. card-->
+                <div class="card-title">Shopping Cart</div>
+                <div class="card-content" id="shoppingCart"><!--13. card-content-->
+                </div><!--13. card-content-->
+            </div><!--12. card-->
+        </div><!--11. assign-content-->
+    </div><!--10. assign-container-->           
 
 <script type="module">
     //create an import statement for Product and ShoppingCart
@@ -94,7 +84,8 @@ JavaScript Iterator - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Gu
     //call cart count item
     setCartCount();
     //add number when product add to cart
-    function setCartCount () {
+    function setCartCount () 
+    {
         //bind cart count to cart-component..count function called on new shoppingCart
         let cartCountDiv = document.getElementById("cart-count"); 
         let count = shoppingCart.count();
@@ -102,14 +93,16 @@ JavaScript Iterator - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Gu
     }
 
     //onclick 
-    document.getElementById("btnAddProduct").onclick = function(){
+    document.getElementById("btnAddProduct").onclick = function()
+    {
         //assign product variable to productList
         let productList = document.getElementById("productList");
         let product = productList.options[productList.selectedIndex].text;
         //assign value variable to productValue
         let productValue = productList.options[productList.selectedIndex].value;
     
-        if (productValue != "--Select--"){
+        if (productValue != "--Select--")
+        {
             //if do not match call shopping cart function with new product
             shoppingCart.add(new Product(product, productValue));
             //call setCartCount function
@@ -119,21 +112,29 @@ JavaScript Iterator - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Gu
         }
     }
 
-    //onclick function for cartIcon element
-    document.getElementById("cartIcon").onclick = function(){
-        //create HTML table
-        let cartDisplayTable = document.querySelector("#shopping-cart tbody");
-        let rows = "";
-        for (let product of shoppingCart) {
-            rows += 
-            `<tr>
-                <td>${product.id}</td>
-                <td>${product.name}</td>
-                <td>${product.price}</td>
-            </tr>`;
-        }
-        cartDisplayTable.innerHTML = rows;
-    }          
+    //onclick function for cartIcon element to display selected products in the table
+    document.getElementById("cartIcon").onclick = function() {
+      //Create HTML table.
+      let cartDisplayTable = `
+      <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>`;
+
+      for (let product of shoppingCart) 
+      {
+        cartDisplayTable += `
+        <tr>
+            <td>${product.id}</td>
+            <td>${product.name}</td>
+            <td>${product.price}</td>
+        </tr>`
+      }
+      //Bind cartDisplayTable to shoppingCart
+      document.getElementById('shoppingCart').innerHTML = cartDisplayTable += `</table>`;
+    }
 </script>
 </body>
 </html>

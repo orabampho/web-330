@@ -1,0 +1,23 @@
+/*
+===================================================    
+Title:  Assignment 6.2 - Future Value App
+Author: Professor Krasso
+Date:  13 February 2022
+Modified By: Orawan Rabampho
+Description: Create a calculator to calculate future 
+interest rate.
+Source:  Source codes assignment instructions.
+====================================================
+*/
+
+.danger {
+    float: right;
+    color: #df546a;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.form-label {
+    display: inline-block;
+    padding-top: 1rem;
+}

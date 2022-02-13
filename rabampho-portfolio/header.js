@@ -9,7 +9,6 @@ class Header extends HTMLElement
             <div id ="banner">
                 <h1>Orawan Rabampho's Personal Portfolio</h1>
             </div>
-
             <div id="nav-container">
                 <ul id="nav-list">
                     <li>

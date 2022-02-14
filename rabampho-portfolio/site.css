@@ -1,6 +1,6 @@
 body, html {
     color: #000;
-    font-family: 'Oswald', Verdana, Arial, sans-serif;
+    font-family: "mrs-eaves", serif;
     margin: 0;
     height: 100%;
 }
@@ -20,6 +20,8 @@ body, html {
     background-color: #FFFFFF;
     color: #4863A0;
     border-bottom: 1px solid #E9E1DC;
+    font-weight: 700;
+    
 }
 
 #nav-container {
@@ -45,6 +47,8 @@ body, html {
     text-decoration: none;
     padding: 3px 5px 3px 5px;
     display: block;
+    font-style: italic;
+    font-weight: bold;
 }
 
 #nav-list li a:hover {
@@ -62,24 +66,25 @@ body, html {
 #footer {
     font-size: .8em;
     height: auto;
-    border-top: 1px solid #E9E1DC;
-    padding: 0 0 0 0;
-    font-style: italic;
-    background-color: #FFFFFF;
-  
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    border-top: 1px solid #E9E1DC;
+    background-color: #FFFFFF;
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 
 #nav-footer-list li {
-    margin: 0;
-    padding: 15px;
-    width: auto;
-    justify-content: center;
-    display: inline;
-    align-items: center;
     color: #4863A0;
+    margin: auto;
+    text-decoration: none;
+    display: inline-block;
+    text-align: left;
+    padding: 3px 5px 3px 5px;
+    font-weight: bold;
 }
 
 #nav-footer-list li a {
@@ -97,8 +102,8 @@ body, html {
 }
 
 #copyright {
-text-align: center;
-color: #4863A0;
+    text-align: center;
+    color: #4863A0;   
 }
 
 /**

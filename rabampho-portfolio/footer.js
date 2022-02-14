@@ -13,10 +13,10 @@ class Footer extends HTMLElement
                     <li><a href="https://www.youtube.com/c/bellevueuniversity">Bellevue University YouTube Channel</a></li>
                     <li><a href="https://github.com/buwebdev/web-330">Web 330: JavaScript II Course GitHub Repository</a></li>
                 </ul>
-            <p id="copyright">
+                <p id="copyright">
                     Copyright &copy; 2022 RABAMPHO
-                </p>
-        </div>
+                    </p>
+            </div>
         
     `;
     }

@@ -121,13 +121,15 @@ p {
 }
 
 #footer a:hover {
-    color: #A23835;
+    text-decoration: underline;
+    color: #F6BE60
 }
 
 #copyright {
     text-align: center;
-    color: #4863A0;
-    font-size: .8em;   
+    font-size: .8em; 
+    color: #F6BE60;
+
 }
 
 /**

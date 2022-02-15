@@ -3,6 +3,24 @@ body, html {
     font-family: "mrs-eaves", serif;
     margin: 0;
     height: 100%;
+
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 20px;
 }
 
 .bg {
@@ -13,24 +31,27 @@ body, html {
   }
 
 #banner {
-    margin: -1% 0 0;
-    padding-top: 10px;
     text-align: center;
-    height: 75px;
+    height: 100px;
     background-color: #FFFFFF;
-    color: #4863A0;
+    color: black;
     border-bottom: 1px solid #E9E1DC;
-    font-weight: 700;
-    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: inherit;
 }
 
 #nav-container {
-    margin: -16px 0 0 0;
+    margin: 0 0 0 0;
     padding: 0;
     height: 30px;
     list-style-type: none;
-    border-bottom: 1px solid #bbbbbb;
+    border-bottom: 1px solid #E9E1DC;
     background-color: #FFFFFF;
+    
 }
 
 #nav-list li {
@@ -45,10 +66,11 @@ body, html {
    
     color: #A23835;
     text-decoration: none;
-    padding: 3px 5px 3px 5px;
+    padding:  3px 5px 3px 5px;
     display: block;
     font-style: italic;
     font-weight: bold;
+    font-size: 20px;
 }
 
 #nav-list li a:hover {
@@ -69,7 +91,7 @@ body, html {
     width: 100%;
     border-top: 1px solid #E9E1DC;
     background-color: #FFFFFF;
-    position: absolute;
+    position: fixed;
     display: block;
     bottom: 0;
     left: 0;
@@ -119,6 +141,16 @@ body, html {
     margin: 3% auto 0;
 }
 
+.assign-content-1
+{
+    display: grid;
+    grid-template-columns: 75% 25%;
+    padding: 10px;
+    grid-gap: 20px;
+    width: 900px;
+    margin: 3% auto 0
+}
+
 .assign-results-text {
     text-align: center;
     font-size: 28px;
@@ -126,15 +158,53 @@ body, html {
 
 .app-header {
     text-align: center;
-    font-weight: 400;
+    font-weight: 48px;
     border: none;
-    color: inherit;
     background-color: inherit;
+    color: #4863A0;
+
+}
+.bucket-list {
+    text-align: center;
+}
+
+.bucket-list ul {
+    list-style-type: none;
+    color: #4863A0;
+    display: inline-block;
+    text-align: center;
+    font-size: 24px;  
+}
+
+.passion {
+    text-align: center;
+}
+
+.passion ul {
+    text-decoration: none;
+    color: #4863A0;
+    display: inline-block;
+    text-align: left;  
+}
+
+.passion li a {
+    display: inline-block;
+    text-align: left;
+    color: #A23835;
+    padding-bottom: 10px;
+    text-decoration: none;
+    font-size: 20px;  
+}
+
+.passion li a:hover {
+    cursor: pointer;
+    color: #4863A0;
 }
 
 .return-home:hover {
     background-color: #D6A800;
     color: #4F3674;
+    
 }
 
 .return-home:visited {
@@ -144,18 +214,19 @@ body, html {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
+    margin-top: -15px;
 }
 
 .card-title {
     text-align: center;
-    font-size: 2em;
-    color: #4F3674;
-    font-weight: 400;
+    font-size: 36px;
+    color: #A23835;
+    font-weight: bold;
+    padding-top: 15px;
 }
 
 .card-content {
     padding: 2px 16px;
-    
 }
 
 .card:hover {

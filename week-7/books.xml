@@ -1,0 +1,59 @@
+<!--
+===================================================    
+Title:  Assignment 7.2 -  WhatABook, Part 1
+Author: Professor Krasso
+Date:  19 February 2022
+Modified By: Orawan Rabampho
+Description: Fetch books information from xml file
+Source:  Source codes assignment instructions.
+JavaScript template strings -
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+Fetch function - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+Window: DOMContentLoaded event - 
+https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
+=====================================================
+-->
+<books>
+    <book>
+       <isbn>0780345339683</isbn>
+       <title>The Hobbit or There and Back Again</title>
+       <description>N/A</description>
+       <pages>287</pages>
+       <author>J.R.R. Tolkien</author> 
+    </book>
+    <book>
+       <isbn>9780261103573</isbn>
+       <title>The Fellowship of the Ring</title>
+       <description>Bing the First Part of the Lord of the Rings</description>
+       <pages>416</pages>
+       <author>J.R.R. Tolkien</author> 
+    </book>
+    <book>
+       <isbn>9780261102361</isbn>
+       <title>The Two Towers</title>
+       <description>Being the Second Part of The Loar of the Rings</description>
+       <pages>442</pages>
+       <author>J.R.R. Tolkien</author> 
+    </book>
+    <book>
+       <isbn>9780261102378</isbn>
+       <title>The Return of the King</title>
+       <description>Being the third part of The Lord of the Rings</description>
+       <pages>556</pages>
+       <author>J.R.R. Tolkien</author> 
+    </book>
+    <book>
+       <isbn>9780593099322</isbn>
+       <title>Dune: Deluxe Edittion</title>
+       <description>N/A</description>
+       <pages>688</pages>
+       <author>Frank Herbert</author> 
+    </book>
+    <book>
+       <isbn>9780316679532</isbn>
+       <title>The Catcher and the Rye</title>
+       <description>N/A</description>
+       <pages>277</pages>
+       <author>J.D. Salinger</author> 
+    </book>
+</books>

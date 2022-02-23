@@ -119,6 +119,7 @@ body {
 #personal-nav-list li a {
     color: #A23835;
     text-decoration: none;
+    font-size: 20px;
 }
 
 #personal-nav-list a:link {

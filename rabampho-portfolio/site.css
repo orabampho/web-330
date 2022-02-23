@@ -134,7 +134,7 @@ p {
  */
 .assign-container {
     padding: 10px;
-    
+    position: relative;
 }
 
 .assign-content {
@@ -171,14 +171,16 @@ p {
 
 .bucket-list ul {
     list-style-type: none;
-    color: #4863A0;
+    color: #191A1A;
     display: inline-block;
     text-align: center;
     font-size: 24px; 
-    padding: 0 0 4px 23px;
-    font-weight: bold;
+    padding: 0 0 4px 20px;
     padding-bottom: 5px;
+}
 
+.bucket-list li {
+padding-bottom: 10px;
 }
 
 .passion {
@@ -292,12 +294,20 @@ p {
 }
 
 .quote {
-   padding-top: 25%;
-    color: #191A1A;
+    color: #A23835;
+    xcolor: #191A1A;
     font-family: "brush-script-std", sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
     font-weight: bold;
-    
-    
+    margin-bottom: 10px;
+}
+
+.personal-img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  padding-top: 10px;
+  float: left;
+  width: 300px;
 }

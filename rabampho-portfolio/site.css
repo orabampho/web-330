@@ -87,7 +87,6 @@ p {
 
 #footer {
     font-size: 1em;
-    height: auto;
     width: 100%;
     border-top: 1px solid #E9E1DC;
     background-color: #FFFFFF;
@@ -139,7 +138,7 @@ p {
 }
 
 .assign-content {
-    width: 900px;
+    width: 1000px;
     margin: 3% auto 0;
 }
 

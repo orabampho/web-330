@@ -32,7 +32,7 @@ p {
 
 #banner {
     text-align: center;
-    height: 100px;
+    height: 75px;
     background-color: #FFFFFF;
     color: black;
     border-bottom: 1px solid #E9E1DC;
@@ -91,7 +91,7 @@ p {
     width: 100%;
     border-top: 1px solid #E9E1DC;
     background-color: #FFFFFF;
-    position: fixed;
+    position: relative;
     display: block;
     bottom: 0;
     left: 0;

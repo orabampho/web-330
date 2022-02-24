@@ -31,8 +31,9 @@ p {
   }
 
 #banner {
+    font-family: "mrs-eaves", serif;
     text-align: center;
-    height: 75px;
+    height: 45px;
     background-color: #FFFFFF;
     color: black;
     border-bottom: 1px solid #E9E1DC;
@@ -41,13 +42,12 @@ p {
     align-items:center;
     font-size: x-large;
     font-weight: bold;
-    font-family: inherit;
 }
 
 #nav-container {
     margin: 0 0 0 0;
     padding: 0;
-    height: 30px;
+    height: 25px;
     list-style-type: none;
     border-bottom: 2px solid #E9E1DC;
     background-color: #FFFFFF;

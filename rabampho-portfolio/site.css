@@ -49,8 +49,9 @@ p {
     padding: 0;
     height: 30px;
     list-style-type: none;
-    border-bottom: 1px solid #E9E1DC;
+    border-bottom: 2px solid #E9E1DC;
     background-color: #FFFFFF;
+    width: 100%;
     
 }
 
@@ -66,11 +67,11 @@ p {
    
     color: #A23835;
     text-decoration: none;
-    padding:  3px 5px 3px 5px;
+    padding:  3px 7px 3px 7px;
     display: block;
     font-style: italic;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 #nav-list li a:hover {
@@ -284,6 +285,13 @@ padding-bottom: 10px;
     box-sizing: border-box;
 }
 
+.drop-down-menu-1 { 
+    display: none;
+}
+
+
+
+
 .form {
     display: inline-grid;
     grid-template-columns: auto;
@@ -315,3 +323,4 @@ padding-bottom: 10px;
   float: left;
   width: 300px;
 }
+

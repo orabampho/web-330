@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../theme.css" />
+    <link rel="stylesheet" type="text/css" href="../site.css" />
+   
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    
+    <script src="../theme.js"></script>
+    <title>WEB 330 - Enterprise JavaScript II</title>
+</head>
+<body>
+    <body class="light-theme">
+        <div class="assign-container">
+            <h1 class="app-header">Welcome to the WhatABook, Part 2 App</h1>
+            <div class="assign-content">
+                <div class="card">
+                    <div class="card-title">Book Listing</div>
+                    <div class="card-content" id="bookListing"></div>
+                </div>
+                <br />
+                    <!--link to the home page-->
+                    <div>
+                    <a href="../index.html" class="return-home">Return</a>
+                    </div>      
+            </div>
+        </div>
+        <!--display results-->
+        <div class="assign-container">
+            <div class="assign-content">
+                <div class="card">
+                    <div class="card-title">Selected Book</div>
+                    <div class="card-content" id="selectedBook"></div>
+                </div>
+            </div>
+        </div>
+</body>
+<script type = "module">
+    //sets theme
+    setSelectedTheme();
+
+    //import HttpClient
+    import {HttpClient} from "./http-client.js";
+
+    //define http
+    let http = new HttpClient();
+    const isbn =[
+        "0345339681",
+        "0261103571",
+        "9780593099322",
+        "9780261102361",
+        "9780261102378",
+        "9780690302715",
+        "9780316769532",
+        "9780743273565",
+        "9780590405959"
+    ];
+
+    //create object literal 
+    const params = {
+        "bibkeys": `IBSN:${isbn.join(",")}`,
+        "format": "json",
+        "jscmd": "details"
+    };
+
+    //call the http.get function and link to library URL
+    http.get("https://openlibrary.org/api/books", params).then(res => {
+        console.log(res);
+
+        document.getElementById("bookListing").innerHTML = buildHtmlString(res, "table");
+
+        //call addIsbnClickEvents()
+        addIsbnClickEvents();
+    })
+
+    //catch() statement
+    .catch(e => {
+        console.log(e);
+    })
+
+    //getBook() function w/event object
+    function getBook(e) {
+        e.preventDefault();
+
+        let self = this;
+
+        let isbn = self.innerHTML;
+
+        new params;
+
+        http.get("http://openlibrary.org/api/books", params).then(res => {
+            document.getElementById("selectedBook").innerHTML = buildHtmlString(res, `<ul>`)
+        })
+
+        //add catch() for error
+        .catch(e => {
+            console.log(e)
+        })
+    
+
+    //buildHtmlString function
+    function buildHtmlString(res, format) {
+        let tableString = `
+        <table id="bookTable" class="table">
+            <tr>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Pages</th>
+                <th>Authors</th>
+            </tr>`;    
+
+            let ulString = ``;
+        }    
+    }
+
+
+
+</script>
+</html>

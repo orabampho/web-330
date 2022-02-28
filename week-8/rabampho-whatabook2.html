@@ -90,14 +90,6 @@ setSelectedTheme();
             console.log(e);
         })
 
-        // onclick event for isbn numbers 
-        function addIsbnClickEvents(){
-            let links = document.getElementsByClassName("isbn-link");
-            Array.from(links).forEach(element => {
-                element.addEventListener("click", getBook);
-            });
-        }
-
         // getBook when selected and display information 
         function getBook(e){
             e.preventDefault();
@@ -175,6 +167,14 @@ setSelectedTheme();
             return (format === "table") ? tableString : ulString;
         }
 
+        // onclick event for isbn numbers 
+        function addIsbnClickEvents(){
+            let links = document.getElementsByClassName("isbn-link");
+            Array.from(links).forEach(element => {
+                element.addEventListener("click", getBook);
+            });
+        }
+   
 </script>
 </body>
 </html>

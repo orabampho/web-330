@@ -9,23 +9,24 @@ Source:  Source codes assignment instructions.
 Fetch API - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 ====================================================
 */
-//export class
+
+//export HttpClient
 export class HttpClient {
 
-//async get function w/ url and params parameters
-async get (url, params = ""){
+    // get function w/ url parameter and new params object 
+    async get(url, params = '') {
 
-    let urlObject = new URL(url);
+       let urlObject = new URL(url);
 
-    let paramsObject = new URLSearchParams(params);
-    urlObject.search = paramsObject;
+        let paramsObject = new URLSearchParams(params);
+        urlObject.search = paramsObject; 
 
-    const res = await fetch(url.toString(),{
-        method: "GET",
-    });
-    
-    //return object as JSON
-    return res.json();  
+        const res = await fetch(urlObject.toString(),{
+            method: "GET", 
+        });
+
+        /* Return object */
+        return res.json();
     }
 }
 
